@@ -1,6 +1,7 @@
 /* main.cpp 
  * Oshan Bhagat
  * This file contains the main function for the Fitness Tracker application, including the user interface and program flow.
+ 
  */
 #include <iostream>
 #include "User.h"
@@ -27,12 +28,27 @@ int main(){
     int squat, bench, deadlift;
     cin >> squat >> bench >> deadlift;
     
+    //Create user object with the provided information
+
     User user(name, age, weight, squatGoal, benchGoal, deadliftGoal, squat, bench, deadlift);
+
     cout << endl;
     user.displayUserInfo();
     user.displayUserGoals();
 
     cout << "Thank you! Now let's set up your exercises." << endl;
+    //create a workout
+    Workout workout;
+    // Generate a workout based on the user's weakest lift
+    workout.generateWorkout(user);
+    // REQUIRED CONCEPTS:
+    // Workout stores Exercise pointers that can point to either
+    // WeightedExercise or BodyweightExercise objects.
+    workout.displayWorkout();
 
-};
+    cout << endl;
+    cout << "Workout generated successfully." << endl;
+
+    return 0;
+}
 

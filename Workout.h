@@ -9,15 +9,23 @@
 
 #include <vector>
 #include "Exercise.h"
+#include "User.h"
 
 using namespace std;
 
 class Workout{
 private:
     vector<Exercise*> exercises;
+    
+    void addGeneratedExercise(string exerciseName, User& user, int sets);
+    int calculateSets(int age);
+    int calculateWeight(double baseWeight, double percentage);
 
 public:
     Workout();
+    ~Workout();
+
+    void generateWorkout(User& user);
 
     void addExercise(Exercise* exercise);
     void displayWorkout();

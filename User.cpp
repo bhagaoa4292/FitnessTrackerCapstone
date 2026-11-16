@@ -108,3 +108,13 @@ string User::WeakestLift() {
         return "Deadlift";
     }
 }
+
+int User::getSquat() {
+    return lifts[0];
+}
+int User::getBench() {
+    return lifts[1];
+}
+int User::getDeadlift() {
+    return lifts[2];
+}

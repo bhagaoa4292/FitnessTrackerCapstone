@@ -28,6 +28,12 @@ class Exercise {
         void setTargetSets(int targetSets);
         void setTargetReps(int targetReps);
         void setWeight(int weight);
+        virtual ~Exercise() = default;
+
+        //Abstract class and polymorphism
+        virtual void display() = 0;
+        virtual void update(int completedReps) = 0;
 };
+
 
 #endif

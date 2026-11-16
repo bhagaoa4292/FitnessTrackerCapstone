@@ -39,6 +39,10 @@ class User{
 
         void displayUserInfo();
         void displayUserGoals();
+        
+        int getSquat();
+        int getBench();
+        int getDeadlift();
 
         string WeakestLift();
 
